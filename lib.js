@@ -9,8 +9,9 @@ form.addEventListener('submit', (ev) => {
 const autoOutput = document.getElementById('auto')
 
 let request = new XMLHttpRequest();
-request.addEventListener("load", function (ev) {
+request.addEventListener("load", function (ev) { // in the case of a load event like this for httpRequest, ev's target will be an XMLHttpResponse obj
   console.log("reqListener");
+  
   const structuredData = JSON.parse(ev.target.responseText);
   console.log(structuredData);
 
